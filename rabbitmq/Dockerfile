@@ -1,4 +1,4 @@
-FROM registry.access.redhat.com/ubi7/ubi:7.8
+FROM registry.access.redhat.com/ubi7/ubi:7.7
 
 
 ARG ERLANG_VERSION=22.1.4
