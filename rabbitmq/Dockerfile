@@ -1,6 +1,5 @@
-#FROM registry.access.redhat.com/ubi7/ubi:7.8
+FROM registry.access.redhat.com/ubi7/ubi:7.8
 
-FROM docker-registry.default.svc:5000/rabbitmq-app-lab/ubi:7.8
 
 ARG ERLANG_VERSION=22.1.4
 ARG RABBITMQ_AUTOCLUSTER_VERSION=0.10.0
