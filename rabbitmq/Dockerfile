@@ -11,7 +11,7 @@ LABEL io.k8s.description="Lightweight open source message broker" \
     io.openshift.tags="rabbitmq"
 
 RUN echo "Hola"
-#ENV GPG_KEY="0A9AF2115F4687BD29803A206B73A36E6026DFCA" \
+ENV GPG_KEY="0A9AF2115F4687BD29803A206B73A36E6026DFCA" \
     HOME=/var/lib/rabbitmq \
     RABBITMQ_HOME=/opt/rabbitmq \
     RABBITMQ_LOGS=- \
@@ -28,8 +28,6 @@ RUN set -xe && \
     curl -Lo rabbitmq-server.tar.xz.asc https://github.com/rabbitmq/rabbitmq-server/releases/download/v${RABBITMQ_VERSION}/rabbitmq-server-generic-unix-${RABBITMQ_VERSION}.tar.xz.asc && \
     export GNUPGHOME="$(mktemp -d)" && \
     env | grep GNUPG && \
-    #gpg --keyserver hkp://ha.pool.sks-keyservers.net:80 --recv-keys "$GPG_KEY" && \
-    #gpg --batch --verify rabbitmq-server.tar.xz.asc rabbitmq-server.tar.xz && \
     rm -rf "$GNUPGHOME" && \
     mkdir -p "$RABBITMQ_HOME" && \
     tar \
